@@ -1,0 +1,11 @@
+services:
+  laravel_7x:
+    container_name: laravel_7x
+    build: .
+    volumes:
+      - vendor:/var/www/html/vendor
+      - ./:/var/www/html/
+    ports:
+      - 8000:8000
+volumes:
+  vendor:

@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run containers",
+      "type": "docker-compose",
+      "dockerCompose": {
+        "up": {
+          "detached": true,
+          "services": ["laravel_7x"]
+        },
+        "files": ["${workspaceFolder}/docker-compose.yml"]
+      }
+    }
+  ]
+}
