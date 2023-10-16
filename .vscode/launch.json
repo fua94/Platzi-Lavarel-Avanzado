@@ -6,7 +6,7 @@
   "configurations": [
     {
       "name": "Run local",
-      "command": "docker exec -it laravel_7x php artisan serve host=0.0.0.0 --port=8000",
+      "command": "docker exec -it laravel_7x php artisan serve --host=0.0.0.0 --port=8000",
       "request": "launch",
       "type": "node-terminal",
       "preLaunchTask": "Run containers"
