@@ -3,7 +3,7 @@
 ## Scaffolding del proyecto
 
 1. Crear ProductControllerTest y crear cada caso de uso para nuestra API de Productos. `php artisan make:test ProductControllerTest`
-2. Crea mi modelo Producto con artisan e indicar las flags necesarios para que ademas cree la migracion, factory, seeder y controllador de API con `php artisan make:model Produdct --api --all`
+2. Crea mi modelo Producto con artisan e indicar las flags necesarios para que ademas cree la migracion, factory, seeder y controllador de API con `php artisan make:model Product --api --all`
 3. Editar migracion de productos para crear la tabla.
 4. Crear las rutas y apuntarlas a cada metodo de mi API. Se puede usar `Route::apiResource('products', 'ProductController');`
 5. Programar la logica de negocio dentro de ProductController
