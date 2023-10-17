@@ -117,3 +117,13 @@ class ProductControllerTest extends TestCase
 2. Ejecutar con cliente REST el siguiente llamado:
 > POST /api/sanctum/token
 > Content-Type: multipart/form-data con email, password, device_name
+
+# Clase 7: Capa de transformación con API Resources
+
+## Resources
+Son herramientas muy parecidos a los mappers, se invocan con:
+`php artisan make:resource <NombreDelRecurso>`
+
+## Requests
+Son herramientas que permiten hacer validaciones y aplicar middlewares desde el *request* y no en la capa de controlador, se invocan con:
+`php artisan make:request <NombreDelRequest>`
