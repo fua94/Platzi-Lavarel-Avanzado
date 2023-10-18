@@ -127,3 +127,8 @@ Son herramientas muy parecidos a los mappers, se invocan con:
 ## Requests
 Son herramientas que permiten hacer validaciones y aplicar middlewares desde el *request* y no en la capa de controlador, se invocan con:
 `php artisan make:request <NombreDelRequest>`
+
+# Clase 9: Relaciones Polimórficas en Eloquent
+
+## Traits
+Es un método para reutilizar métodos en clases independientes.
