@@ -132,3 +132,11 @@ Son herramientas que permiten hacer validaciones y aplicar middlewares desde el 
 
 ## Traits
 Es un método para reutilizar métodos en clases independientes.
+
+# Clase 10: Cómo crear comandos para la terminal de Laravel
+
+## Comandos
+`php artisan make:command <NombreDelComando>`
+
+## Notificaciones
+`php artisan make:notification <NombreDeLaNotificacion>`
