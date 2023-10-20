@@ -115,28 +115,40 @@ class ProductControllerTest extends TestCase
 
 1. Ejecutar seeders
 2. Ejecutar con cliente REST el siguiente llamado:
-> POST /api/sanctum/token
-> Content-Type: multipart/form-data con email, password, device_name
+   > POST /api/sanctum/token
+   > Content-Type: multipart/form-data con email, password, device_name
 
 # Clase 7: Capa de transformación con API Resources
 
 ## Resources
+
 Son herramientas muy parecidos a los mappers, se invocan con:
 `php artisan make:resource <NombreDelRecurso>`
 
 ## Requests
-Son herramientas que permiten hacer validaciones y aplicar middlewares desde el *request* y no en la capa de controlador, se invocan con:
+
+Son herramientas que permiten hacer validaciones y aplicar middlewares desde el _request_ y no en la capa de controlador, se invocan con:
 `php artisan make:request <NombreDelRequest>`
 
 # Clase 9: Relaciones Polimórficas en Eloquent
 
 ## Traits
+
 Es un método para reutilizar métodos en clases independientes.
 
 # Clase 10: Cómo crear comandos para la terminal de Laravel
 
 ## Comandos
+
 `php artisan make:command <NombreDelComando>`
 
 ## Notificaciones
+
 `php artisan make:notification <NombreDeLaNotificacion>`
+
+# Clase 12: Programación de tareas
+
+## Schedule
+
+Sirve para ejecutar tareas programadas, estas se deben llamar en un cron en el servidor.
+`php artisan schedule:run`
