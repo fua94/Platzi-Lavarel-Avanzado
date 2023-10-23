@@ -152,3 +152,11 @@ Es un método para reutilizar métodos en clases independientes.
 
 Sirve para ejecutar tareas programadas, estas se deben llamar en un cron en el servidor.
 `php artisan schedule:run`
+
+# Clase 13: Eventos y Listeners en Laravel
+
+## Eventos/Listeners
+
+Se disparan cuando se realiza una operación (generalmente en los modelos/controladores).
+`php artisan make:event <NombreDelEvento>`
+`php artisan make:listener <NombreDelListener>`
