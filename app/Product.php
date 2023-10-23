@@ -18,6 +18,18 @@ class Product extends Model
 
     public function createdBy()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
+    // Call built in Eloquent events
+    protected static function booted()
+    {
+        static::creating(function (Product $product) {
+            $faker = \Faker\Factory::create();
+            $product->image_url = $faker->imageUrl();
+            if (auth()->user()) {
+                $product->createdBy()->associate(auth()->user());
+            }
+        });
     }
 }
