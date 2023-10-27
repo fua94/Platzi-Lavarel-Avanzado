@@ -160,3 +160,26 @@ Sirve para ejecutar tareas programadas, estas se deben llamar en un cron en el s
 Se disparan cuando se realiza una operación (generalmente en los modelos/controladores).
 `php artisan make:event <NombreDelEvento>`
 `php artisan make:listener <NombreDelListener>`
+
+# Clase 15: Introducción al uso de Queues y Jobs
+
+## Queues y Jobs
+
+Los Jobs son tareas que se realizan de manera asincrona, almacenados en una cola, y entregan respuesta inmediata al usuario.
+https://laravel.com/docs/7.x/queues
+
+1. `php artisan queue:table`
+2. `php artisan migrate`
+3. Env: QUEUE_CONNECTION=database
+4. `php artisan make:job <NombreDelJob>`
+5. `php artisan queue:listen`
+
+## Emails
+
+Son plantillas de correo que reciben parámetros y los imprimen en una vista.
+`php artisan make:mail <NombreDeLaPlantilla>`
+
+## Cuando usar queue:work y cuándo queue:listen
+
+Para ambientes productivos la recomendación es trabajar con **queue:work** ya que la ejecución de los jobs se hace de manera más eficiente (hay datos de la aplicación claves para ello que se almacenan en memoria).
+Para ambientes en local la recomendación es trabajar con **queue:listen**, de esta forma los cambios que se hacen en el desarrollo involucrado se reflejarán automáticamente (no hay información que se guarde en memoria).
