@@ -6,7 +6,7 @@ RUN dnf install -y epel-release
 RUN dnf install -y https://rpms.remirepo.net/enterprise/remi-release-9.rpm
 RUN dnf module enable -y php:remi-7.4
 RUN dnf update -y
-RUN dnf install -y php php-cli php-mbstring php-xml php-gd php-zip php-mysqlnd php-json
+RUN dnf install -y php php-cli php-mbstring php-xml php-gd php-zip php-mysqlnd php-json nodejs
 
 # Instala Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
@@ -19,6 +19,7 @@ COPY . .
 
 # Instala las dependencias de Composer
 RUN composer install
+RUN npm install
 RUN php artisan key:generate
 
 # Copia la configuración del servidor web si es necesario (por ejemplo, nginx o Apache)
