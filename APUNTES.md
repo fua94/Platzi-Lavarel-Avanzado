@@ -151,6 +151,7 @@ Es un método para reutilizar métodos en clases independientes.
 ## Schedule
 
 Sirve para ejecutar tareas programadas, estas se deben llamar en un cron en el servidor.
+
 `php artisan schedule:run`
 
 # Clase 13: Eventos y Listeners en Laravel
@@ -158,8 +159,9 @@ Sirve para ejecutar tareas programadas, estas se deben llamar en un cron en el s
 ## Eventos/Listeners
 
 Se disparan cuando se realiza una operación (generalmente en los modelos/controladores).
-`php artisan make:event <NombreDelEvento>`
-`php artisan make:listener <NombreDelListener>`
+
+- `php artisan make:event <NombreDelEvento>`
+- `php artisan make:listener <NombreDelListener>`
 
 # Clase 15: Introducción al uso de Queues y Jobs
 
@@ -183,3 +185,7 @@ Son plantillas de correo que reciben parámetros y los imprimen en una vista.
 
 Para ambientes productivos la recomendación es trabajar con **queue:work** ya que la ejecución de los jobs se hace de manera más eficiente (hay datos de la aplicación claves para ello que se almacenan en memoria).
 Para ambientes en local la recomendación es trabajar con **queue:listen**, de esta forma los cambios que se hacen en el desarrollo involucrado se reflejarán automáticamente (no hay información que se guarde en memoria).
+
+# Clase 16: Cómo disparar eventos en Queues
+
+Para que un evento se dispare desde un Job en una cola, el evento debe implementar la interfaz: _ShouldQueue_.
