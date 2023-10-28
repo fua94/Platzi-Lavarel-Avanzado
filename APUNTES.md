@@ -14,12 +14,12 @@ _Reto de la Clase_: Crear Endpoint para Categorias.
 ## Crear una base de datos sqlite
 
 1. Crear el archivo `database.sqlite` en la raiz de la carpeta `database`.
-2. En el archivo `.env` solo dejar el driver en la seccion de la configuración de bases de datos.
+2. En el archivo `.env` solo dejar el driver en la seccion de la configuración de bases de datos y cambiar la variable **DB_CONNECTION=sqlite**
 3. Ejecutar las migraciones.
 
 ## Ejecutar las pruebas
 
-1. Ejecutar el comando `php artisan test --filter=<NombreDelTestTest>`.
+Ejecutar el comando `php artisan test --filter=<NombreDelTestTest>`.
 
 # Clase 5: Instalar Laravel Sanctum
 
@@ -81,7 +81,7 @@ return $request->user();
 
 Con esto cada vez que ingresemos a esa ruta tendremos que enviar
 
-Afortunadamente, la documentación de Laravel es bastante completa y dentro de ella podremos encontrar mas posibilidades que nos ofrece Sanctum: https://laravel.com/docs/8.x/sanctum
+Afortunadamente, la documentación de Laravel es bastante completa y dentro de ella podremos encontrar mas posibilidades que nos ofrece Sanctum: https://laravel.com/docs/7.x/sanctum
 
 # Clase 6: API de autenticación: laravel UI y laravel sanctum
 
@@ -189,3 +189,25 @@ Para ambientes en local la recomendación es trabajar con **queue:listen**, de e
 # Clase 16: Cómo disparar eventos en Queues
 
 Para que un evento se dispare desde un Job en una cola, el evento debe implementar la interfaz: _ShouldQueue_.
+
+# Clase 19: Excepciones personalizadas
+
+https://laravel.com/docs/7.x/errors
+
+## Usar configuraciones
+
+1. Crear archivo dentro de la carpeta **/config**
+2. Llamar con
+
+```php
+config("<archivo>.<key>");
+```
+
+## Usar translaciones
+
+1. Crear archivo dentro de la carpeta **/resources/lang/<IdiomaNavegador>**
+2. Llamar con
+
+```php
+trans("<archivo>.<key>", ["paramero" => $valor]);
+```

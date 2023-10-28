@@ -58,4 +58,14 @@ class RatingTest extends TestCase
         $this->assertInstanceOf(Product::class, $rating->rateable);
         $this->assertInstanceOf(User::class, $rating->qualifier);
     }
+
+    public function test_fail_rating_model()
+    {
+        /** @var User $user */
+        $user = factory(User::class)->create();
+        /** @var Product $product */
+        $product = factory(Product::class)->create();
+
+        $user->rate($product, 6);
+    }
 }
