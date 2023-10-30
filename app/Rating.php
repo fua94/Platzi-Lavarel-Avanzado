@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Relations\Pivot;
+use Carbon\Carbon;
 
 class Rating extends Pivot
 {
@@ -17,5 +18,10 @@ class Rating extends Pivot
     public function qualifier()
     {
         return $this->morphTo();
+    }
+
+    public function approve()
+    {
+        $this->approved_at = Carbon::now();
     }
 }

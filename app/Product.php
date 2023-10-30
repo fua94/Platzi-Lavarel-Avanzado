@@ -9,7 +9,8 @@ class Product extends Model
 {
     use CanBeRated;
 
-    protected $guarded = [];
+    // protected $guarded = [];
+    protected $fillable = ['name'];
 
     public function category()
     {

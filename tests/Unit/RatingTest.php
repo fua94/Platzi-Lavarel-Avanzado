@@ -7,6 +7,7 @@ use App\Rating;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use App\Exceptions\InvalidScoreException;
 
 class RatingTest extends TestCase
 {
@@ -38,9 +39,9 @@ class RatingTest extends TestCase
         $product = factory(Product::class)->create();
 
         $user->rate($product, 5);
-        $user2->rate($product, 10);
+        $user2->rate($product, 1);
 
-        $this->assertEquals(7.5, $product->averageRating(User::class));
+        $this->assertEquals(3, $product->averageRating(User::class));
     }
 
     public function test_rating_model()
@@ -66,6 +67,7 @@ class RatingTest extends TestCase
         /** @var Product $product */
         $product = factory(Product::class)->create();
 
+        $this->expectException(InvalidScoreException::class);
         $user->rate($product, 6);
     }
 }

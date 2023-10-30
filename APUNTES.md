@@ -211,3 +211,22 @@ config("<archivo>.<key>");
 ```php
 trans("<archivo>.<key>", ["paramero" => $valor]);
 ```
+
+# Clase 21: Configuración de logs y channels en Laravel
+
+https://laravel.com/docs/7.x/logging
+
+## Thinker
+
+Es una utilidad CLI que permite ejecutar código php relacionado con Laravel, como helpers.
+`php artisan tinker`
+
+## Logger
+
+Es una manera simple de escribir hacia los logs de la aplicacion.
+
+```php
+logger()->error('Ejemplo');
+```
+
+## Politicas de autenticación
