@@ -19,7 +19,6 @@ class ProductRatingController extends Controller
         /** @var User $user */
         $user = $request->user();
         $user->rate($product, $request->get('score'));
-        logger()->info('product' . $product);
 
         return new ProductResource($product);
     }
@@ -35,7 +34,6 @@ class ProductRatingController extends Controller
 
     public function approve(Rating $rating)
     {
-
         Gate::authorize("admin", $rating);
 
         $rating->approve();
@@ -46,7 +44,6 @@ class ProductRatingController extends Controller
 
     public function list(Request $request)
     {
-
         Gate::authorize("admin");
 
         $builder = Rating::query();

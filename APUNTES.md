@@ -230,3 +230,33 @@ logger()->error('Ejemplo');
 ```
 
 ## Politicas de autenticación
+
+Es un manera de dar permiso al usuario.
+
+AuthServiceProvider:
+
+```php
+    public function boot()
+    {
+        $this->registerPolicies();
+
+        Gate::define("admin", function ($user) {
+            return $user->is_admin;
+        });
+    }
+```
+
+En el controlador:
+
+```php
+    use Illuminate\Support\Facades\Gate;
+
+    class MYController extends Controller
+    {
+        public function myMethod(Request $request)
+        {
+            Gate::authorize("admin");
+
+            ...
+
+```

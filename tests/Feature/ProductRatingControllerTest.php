@@ -23,14 +23,32 @@ class ProductRatingControllerTest extends TestCase
 
     public function test_rate()
     {
-        $product = Product::all();
-        logger()->info('product key' . json_encode($product));
+        $product = factory(Product::class)->create();
 
         $data = [
             'score' => 1
         ];
 
-        $response = $this->getJson("/api/products/{$product->getKey()}/rate", $data);
+        $response = $this->postJson("/api/products/{$product->getKey()}/rate", $data);
+        $response->assertSuccessful();
+        $response->assertHeader('content-type', 'application/json');
+    }
+
+    public function test_approve()
+    {
+        $product = factory(Product::class)->create();
+
+        $data = [
+            'score' => 5
+        ];
+
+        $this->postJson("/api/products/{$product->getKey()}/rate", $data);
+
+        $ratings = json_decode($this->getJson("/api/rating", [
+            "approved" => true
+        ])->getContent(), true);
+
+        $response = $this->postJson("/api/rating/{$ratings["data"][0]["id"]}/approve");
         $response->assertSuccessful();
         $response->assertHeader('content-type', 'application/json');
     }
