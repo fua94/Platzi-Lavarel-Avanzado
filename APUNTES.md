@@ -260,3 +260,12 @@ En el controlador:
             ...
 
 ```
+
+# Clase 25: Registro y carga de clases con service providers
+
+Nos permiten inyectar dependencias en el ciclo de vida de la aplicación.
+
+Service Providers: https://laravel.com/docs/7.x/providers
+View Composer: https://laravel.com/docs/7.x/views#view-composers
+
+`php artisan make:provider <NombreDelServiceProvider>`
